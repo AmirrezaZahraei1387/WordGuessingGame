@@ -10,3 +10,17 @@ class ChooseWord:
 
     def __init__(self):
         self.languages, self.paths = open_file()
+
+    def open_csv(self, path_index):
+        """this method will open the csv. the path_index
+        is the index of the path in self.paths list"""
+
+        with open(self.paths[path_index], mode = 'r', encoding="utf-8") as file:
+            read = csv.reader(file)
+            next(read) # to remove the field
+            read = list(read)
+        
+        return read
+    
+
+
