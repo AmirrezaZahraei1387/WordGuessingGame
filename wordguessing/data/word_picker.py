@@ -2,8 +2,9 @@
 for the game. it will select the first word of the csv file
 and then push it at the end of the file."""
 
-from data_path_reader import open_file
 import csv
+from data_path_reader import open_file
+
 
 class ChooseWord:
     """this class choose word!"""
@@ -17,10 +18,17 @@ class ChooseWord:
 
         with open(self.paths[path_index], mode = 'r', encoding="utf-8") as file:
             read = csv.reader(file)
-            next(read) # to remove the field
             read = list(read)
         
         return read
+
+    def write_csv(self, data, path_index):
+        """this method will get """
+        with open()
+    
+
+    
+
     
 
 
