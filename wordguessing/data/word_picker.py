@@ -3,14 +3,14 @@ for the game. it will select the first word of the csv file
 and then push it at the end of the file."""
 
 import csv
-from data_path_reader import open_file
+import data.data_path_reader 
 
 
 class ChooseWord:
     """this class choose word!"""
 
     def __init__(self):
-        self.languages, self.paths = open_file()
+        self.languages, self.paths = data.data_path_reader.open_file()
 
     def open_csv(self, path_index):
         """this method will open the csv. the path_index
