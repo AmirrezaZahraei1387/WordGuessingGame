@@ -16,4 +16,3 @@ def open_file(path= PATH):
         paths = data["files_path"]
 
     return languages, paths
-
