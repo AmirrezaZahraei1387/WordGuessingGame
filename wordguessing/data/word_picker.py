@@ -24,8 +24,35 @@ class ChooseWord:
 
     def write_csv(self, data, path_index):
         """this method will get """
-        with open()
-    
+        with open(self.paths[path_index], mode='w', encoding='utf-8') as file:
+            write=csv.writer(file)
+            write.writerows(data)
+
+    def pick(self, language:str):
+        """this method will pick a word from the data.
+        if the output of method was False it means language is
+        not supported"""
+
+        if language not in self.languages:
+            return False # means that the language is not  supported
+        
+        index = self.languages.index(language)
+        data = self.open_csv(index)
+
+        word = data[1] # this will get the first word of the 
+        # data. it uses 1 because the first index is occupied 
+        # b the field
+
+        data.append(data[1])
+        data.pop(1)
+
+        self.write_csv(data, index)
+
+        return word
+
+
+
+
 
     
 

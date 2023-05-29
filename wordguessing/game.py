@@ -1,0 +1,1 @@
+"""this file impelements the easy logic of the program"""
