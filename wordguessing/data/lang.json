@@ -1,4 +1,6 @@
 
 {
-    "langs":["eng"]
+    "langs":["english","farsi"],
+    "files_path":["/workspaces/WordGuessingGame/wordguessing/data/eng/words.csv",
+                  "/workspaces/WordGuessingGame/wordguessing/data/farsi/words.csv"]
 }
