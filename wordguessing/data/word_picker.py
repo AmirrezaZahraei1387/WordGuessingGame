@@ -3,14 +3,17 @@ for the game. it will select the first word of the csv file
 and then push it at the end of the file."""
 
 import csv
-import data.data_path_reader 
+import data.data_path_reader
 
 
 class ChooseWord:
     """this class choose word!"""
 
+    languages:list
+    paths:list
+
     def __init__(self):
-        self.languages, self.paths = data.data_path_reader.open_file()
+        self.languages, self.paths = data.data_path_reader.open_file()# thiss p
 
     def open_csv(self, path_index):
         """this method will open the csv. the path_index
@@ -21,12 +24,13 @@ class ChooseWord:
             read = list(read)
         
         return read
+    
 
-    def write_csv(self, data, path_index):
+    def write_csv(self, data_, path_index):
         """this method will get """
         with open(self.paths[path_index], mode='w', encoding='utf-8') as file:
             write=csv.writer(file)
-            write.writerows(data)
+            write.writerows(data_)
 
     def pick(self, language:str):
         """this method will pick a word from the data.
@@ -34,19 +38,19 @@ class ChooseWord:
         not supported"""
 
         if language not in self.languages:
-            return False # means that the language is not  supported
+            raise ValueError("the givven language is not supported") # means that the language is not  supported
         
         index = self.languages.index(language)
-        data = self.open_csv(index)
+        data_ = self.open_csv(index)
 
-        word = data[1] # this will get the first word of the 
+        word = data_[1] # this will get the first word of the 
         # data. it uses 1 because the first index is occupied 
         # b the field
 
-        data.append(data[1])
-        data.pop(1)
+        data_.append(data_[1])
+        data_.pop(1)
 
-        self.write_csv(data, index)
+        self.write_csv(data_, index)
 
         return word
 
