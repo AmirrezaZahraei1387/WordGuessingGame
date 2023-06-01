@@ -67,7 +67,7 @@ class DWGGame(ChooseWord):
     
     @giveword.setter
     def giveword(self, other:list):
-
+        print(len(other), self.len_word, other)
         if len(other) == self.len_word:
             self.__giveword = other
         else:
@@ -96,7 +96,8 @@ class DWGGame(ChooseWord):
         index = -1
         indexs = []
 
-        for i,j in self.__word, self.__giveword:
+        for k in range(self.len_word):
+            i, j = self.__word[k], self.__giveword[k]
             index+=1
             if i == j:
                 self.pattern[index] = i

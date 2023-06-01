@@ -18,9 +18,9 @@ while (True):
 
     print(obj.pattern)
 
-    word = list(input("enter the letters of the word you guess in list:"))
+    word = eval(input("enter the letters of the word you guess in list:"))
     obj.giveword = word
-    result = obj.check
+    result = obj.check()
     cl = obj.check_left()
 
     if cl:
